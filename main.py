@@ -1,6 +1,6 @@
 import json
 from datetime import date
-from mints.mennicaKapitalowa import mennicaKapitalowa
+from mints import *
 
 def main():
   data = {}
