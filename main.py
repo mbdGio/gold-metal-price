@@ -1,10 +1,14 @@
 import json
 from datetime import date
-from mints import *
+import inspect
+import mints
 
 def main():
   data = {}
-  data['kapitalowa'] = mennicaKapitalowa()
+
+  all = inspect.getmembers(mints, inspect.isfunction)
+  for mint in all:
+    data[mint[0]] = mint[1].__call__()
 
   today = date.today()
   d1 = today.strftime("%Y-%m-%d")

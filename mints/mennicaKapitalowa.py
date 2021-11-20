@@ -9,7 +9,6 @@ def mennicaKapitalowa():
   units = all.find_all("div", class_="product_wrapper")
 
   res = []
-
   for unit in units:
     name = unit.find("a", class_="product-name").text.strip()
     price = unit.find("span", class_="price").text.strip()
