@@ -1,5 +1,6 @@
 import json
 from datetime import date
+import os
 import inspect
 import mints
 
@@ -12,6 +13,8 @@ def main():
 
   today = date.today()
   d1 = today.strftime("%Y-%m-%d")
+  if not os.path.exists('results'):
+    os.makedirs('results')
   name = "./results/" + str(d1) + ".json"
 
   with open(name, 'w') as outfile:
