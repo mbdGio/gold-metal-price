@@ -11,7 +11,9 @@ def mennicaKapitalowa():
   res = []
   for unit in units:
     name = unit.find("a", class_="product-name").text.strip()
-    price = unit.find("span", class_="price").text.strip()
+    price = unit.find("span", class_="price")
+    if price is not None:
+      price = price.text.strip()
     res.append({
       'name': name,
       'price': price
