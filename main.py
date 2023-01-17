@@ -1,8 +1,10 @@
+from __future__ import unicode_literals
 import json
 from datetime import date
 import os
 import inspect
 import mints
+import codecs
 
 def main():
   data = {}
@@ -17,8 +19,8 @@ def main():
     os.makedirs('results')
   name = "./results/" + str(d1) + ".json"
 
-  with open(name, 'w') as outfile:
-    json.dump(data, outfile)
+  with codecs.open(name, 'w','utf-8') as outfile:
+    json.dump(data, outfile, ensure_ascii=False)
 
 if __name__ == "__main__":
   main()

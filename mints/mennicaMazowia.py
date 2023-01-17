@@ -11,7 +11,6 @@ def mennicaMazowia():
   res = []
   for unit in units:
     name = unit.find("a", class_="product__name").text.strip()
-    priceInfo = ""
     priceInfo = str(unit.find("strong", class_="price").text.strip())
     price = priceInfo.replace(' / szt. brutto', '')
     res.append({
